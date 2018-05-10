@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <div class="js-tab tab" data-config='{"triggerType":"mouseover","effect":"dafault","invoke": 7,"auto": 1000}'>
+            <ul class="tab-nav">
+                <li class="actived">
+                    <a href="#">新闻</a>
+                </li>
+                <li>
+                    <a href="#">娱乐</a>
+                </li>
+                <li>
+                    <a href="#">电影</a>
+                </li>
+                <li>
+                    <a href="#">科技</a>
+                </li>
+            </ul>
+            <div class="content-wrap">
+                <div class="content-item current">1</div>
+                <div class="content-item">2</div>
+                <div class="content-item">3</div>
+                <div class="content-item">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="js-tab tab" data-config='{"triggerType":"mouseover","effect":"dafault","invoke": 7,"auto": 1000}'>
+            <ul class="tab-nav">
+                <li class="actived">
+                    <a href="#">新闻</a>
+                </li>
+                <li>
+                    <a href="#">娱乐</a>
+                </li>
+                <li>
+                    <a href="#">电影</a>
+                </li>
+                <li>
+                    <a href="#">科技</a>
+                </li>
+            </ul>
+            <div class="content-wrap">
+                <div class="content-item current">1</div>
+                <div class="content-item">2</div>
+                <div class="content-item">3</div>
+                <div class="content-item">4</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tab.js"></script>
+    <script>
+        var t = document.getElementsByClassName("js-tab");
+        Tab.init(t);
+    </script>
+</body>
+
+</html>
