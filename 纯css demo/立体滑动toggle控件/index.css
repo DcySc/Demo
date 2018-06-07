@@ -31,6 +31,7 @@ html,body,
     background:linear-gradient(to top,silver,whitesmoke);
     position:relative;
     left:-30%;
+    transition: 0.5s;
 }
 
 .checkbox .inner .toggle::before{
