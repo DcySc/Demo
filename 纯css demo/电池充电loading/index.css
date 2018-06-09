@@ -1,0 +1,43 @@
+html,body{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(to bottom, teal,aqua);
+}
+
+.battery{
+    position:relative;
+    width:6em;
+    height:3em;
+    color:midnightblue;
+    border:0.5em solid currentColor;
+    border-radius:0.2em;
+    font-size:2em;
+    background-size:20% 80%;
+    background-image:linear-gradient(to right,whitesmoke,whitesmoke);
+    background-repeat:no-repeat;
+    background-position:0.3em 50%;
+    animation:change 5s steps(8) infinite;
+}
+
+.battery::after{
+    position:absolute;
+    right:-1em;
+    top:0.5em;
+    content:"";
+    width:0.5em;
+    height:2em;
+    background-color: currentColor;
+    border-radius:0 0.2em 0.2em 0;
+}
+
+@keyframes change{
+    from{
+        background-size:10% 80%;
+    }
+
+    to{
+        background-size:95% 80%;
+    }
+}
