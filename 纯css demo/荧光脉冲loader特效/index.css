@@ -1,0 +1,46 @@
+html,body,.circle{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:black;
+}
+
+:root{
+    --innerRadius:2em;
+}
+
+.circle {
+    position:relative;
+    width:calc(var(--innerRadius)*2);
+    height:calc(var(--innerRadius)*2);
+    border-radius:50%;
+    background-color:lime;
+    box-shadow:0 0 0 calc(var(--innerRadius) - 0.4em) black,
+               0 0 0 var(--innerRadius) lime;
+}
+
+.circle::before,
+.circle::after{
+    position: absolute;
+    content:"";
+    width:calc(var(--innerRadius)*2*2);
+    height:calc(var(--innerRadius)*2*2);
+    border-radius:50%;
+    border:2px solid lime;
+    animation:pluse 2s ease-out infinite;
+}
+.circle::after{
+    animation-delay:1s;
+}
+
+@keyframes pluse{
+    from{
+        transform:scale(1);
+        filter:opacity(0.90);
+    }
+    to{
+        transform:scale(2);
+        filter:opacity(0);
+    }
+}
