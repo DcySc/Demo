@@ -1,0 +1,44 @@
+html,body{
+    display:flex;
+    height:100%;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(brown,sandybrown);
+}
+
+.text{
+    position:relative;
+    font-size:5em;
+    font-family:"arial black";
+    color:transparent;
+}
+
+.text::after,
+.text::before{
+    position:absolute;
+    content:attr(data-text);
+    top:0;
+    left:0;
+    color:lightyellow;
+}
+
+.text::before{
+    /* background-color:darkgreen; */
+    clip-path:polygon(0 0, 60% 0,30% 100%,0 100%);
+}
+
+.text::after{
+    /* background-color:darkblue; */
+    clip-path:polygon(60% 0,100% 0,100% 100%,30% 100%);
+}
+
+.text:hover::after{
+    left:0.15em;
+    top: 0.05em;
+    transform:rotate(5deg);
+}
+.text:hover::before{
+    left:-0.15em;
+    top: -0.05em;
+    transform:rotate(-5deg);
+}
