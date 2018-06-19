@@ -1,0 +1,54 @@
+html,body,.box{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+body{
+    background-color:#222;
+}
+
+.box{
+    position:relative;
+    width:10em;
+    height:5em;
+    color:white;
+    background-color:#111;
+    font-size:2.5em;
+    line-height:1.5em;
+    font-family:sans-serif;
+    text-align:center;
+    border-radius:0.2em;
+    animation:animate_text 2s infinite linear alternate;
+}
+
+.box::before{
+    position:absolute;
+    content:"";
+    width:calc(100% + 2%);
+    height:calc(100% + 4%);
+    z-index:-1;
+    border-radius:0.2em;
+    background-image: linear-gradient(60deg, aquamarine, cornflowerblue, goldenrod, hotpink, salmon, lightgreen, sandybrown, violet);
+    background-size:300%;
+    animation:animate_bg 5s infinite alternate linear;
+}
+
+@keyframes animate_bg{
+    0%,100%{
+        background-position:0%, center;
+    }
+    50%{
+        background-position:100%,center;
+    }
+}
+
+@keyframes animate_text{
+    from{
+        color:lime;
+    }
+    to{
+        color:yellow;
+    }
+}
