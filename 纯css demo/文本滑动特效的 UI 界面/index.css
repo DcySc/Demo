@@ -1,0 +1,69 @@
+html,body {
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:darkcyan;
+}
+
+h1 {
+    position:relative;
+    color: gold;
+    text-align: center;
+}   
+
+h1::after {
+    content: "?";
+    position: absolute;
+    top: -0.35em;
+    left: 0;
+    font-size: 20em;
+    transform: rotate(15deg);
+    color: cyan;
+    filter: opacity(0.3);
+    text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+}
+
+p {
+    position:relative;
+    width:400px;
+    height:2.5em;
+    font-size:24px;
+    font-family:sans-serif;
+    text-align:center;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    line-height:2.5em;
+    color:gold;
+    border: 2px solid gold;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+p span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.5s;
+}
+
+p .qusetion {
+    left: 0;
+}
+
+p:hover .question {
+    left: 100%;
+}
+
+p .answer {
+    left: -100%;
+    background: rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+p:hover .answer {
+    left: 0;
+}
