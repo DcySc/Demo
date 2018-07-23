@@ -1,0 +1,69 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(silver,dimgray)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.court {
+    position: relative;
+    width: 20em;
+    height: 20em;
+    color: white;
+    border: 1em solid currentColor;
+}
+
+.left-paddle,
+.right-paddle {
+    position: absolute;
+    width: 1em;
+    height: calc(50% - 1em);
+    background-color: currentColor; 
+    animation: 1s linear infinite alternate;
+}
+
+.left-paddle {
+    top: 1em;
+    left: 1em;
+    animation-name: left-moving;
+}
+
+.right-paddle {
+    bottom: 1em;
+    right: 1em;
+    animation-name: right-moving;
+}
+
+.ball {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    left: 2em;
+    top: calc(50% - 1.5em);
+    animation: bounce 1s linear infinite alternate;
+}
+
+@keyframes left-moving {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes right-moving {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+
+@keyframes bounce {
+    to {
+        left: calc(100% - 3em);
+    }
+}
