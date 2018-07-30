@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(white, silver);
+}
+
+nav {
+    --h: 3em;
+   
+}
+
+nav:nth-child(1) {
+    --color: #333;
+    --rate: 1.5;
+}
+
+nav:nth-child(2) {
+    --color: brown;
+    --rate: 1.732;
+}
+
+nav:nth-child(3) {
+    --color: green;
+    --rate: 2;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    position:relative;
+    margin: 2em;
+    width: calc(var(--h) * var(--rate));
+    height: var(--h);
+    background-color: var(--color);
+    list-style-type: none;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: var(--h);
+    text-align: center;
+}
+
+nav ul li::before,
+nav ul li::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: inherit;
+    height: inherit;
+    background-color: var(--color);
+    z-index: -1;
+    filter: opacity(0);
+    transition: 0.3s;
+}
+
+nav ul li::before {
+    transform: rotate(60deg) translateX(calc(-2 * var(--h)));
+}
+
+nav ul li::after {
+    transform: rotate(-60deg) translateX(calc(2 * var(--h)));
+}
+
+nav ul li:hover::before {
+    transform: rotate(60deg) translateX(0);
+    filter: opacity(1);
+}
+
+nav ul li:hover::after {
+    transform: rotate(-60deg) translateX(0);
+    filter: opacity(1);
+}
